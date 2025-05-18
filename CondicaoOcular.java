@@ -1,17 +1,18 @@
 abstract class CondicaoOcular {
-    protected double grau;
+    protected double grauEsferico;
     protected double indiceRefracao;
     protected String tipoLente;
     protected String material;
+    protected double espessuraCentral = 0.002; // 2 mm como padrão
+    protected double diametroLente = 0.05; // 50 mm como padrão
 
-    public CondicaoOcular(double grau, String material, String tipoLente) {
-        this.grau = grau;
+    public CondicaoOcular(double grauEsferico, String material, String tipoLente) {
+        this.grauEsferico = grauEsferico;
         this.material = material;
         this.tipoLente = tipoLente;
-        // Definindo índice de refração com base no material
         switch (material.toLowerCase()) {
             case "resina":
-                this.indiceRefracao = 1.5;
+                this.indiceRefracao = 1.50;
                 break;
             case "policarbonato":
                 this.indiceRefracao = 1.59;
@@ -20,7 +21,8 @@ abstract class CondicaoOcular {
                 this.indiceRefracao = 1.52;
                 break;
             default:
-                this.indiceRefracao = 1.5; // Resina como padrão
+                this.indiceRefracao = 1.50;
+                this.material = "Resina";
         }
     }
 
