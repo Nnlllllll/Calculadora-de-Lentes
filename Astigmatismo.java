@@ -1,4 +1,4 @@
-class Astigmatismo extends CondicaoOcular {
+public class Astigmatismo extends CondicaoOcular {
     private double grauCilindrico;
     private int eixo;
 
@@ -9,7 +9,7 @@ class Astigmatismo extends CondicaoOcular {
     }
 
     @Override
-    void calcularDimensoesLente() {
+    public void calcularDimensoesLente() {
         if (grauCilindrico >= 0 || eixo < 0 || eixo > 180) {
             System.out.println("Erro: Grau cilíndrico deve ser negativo e eixo entre 0 e 180 graus.");
             return;
