@@ -1,10 +1,10 @@
-class Miopia extends CondicaoOcular {
+ public class Miopia extends CondicaoOcular {
     public Miopia(double grauEsferico, String material, String tipoLente) {
         super(grauEsferico, material, tipoLente);
     }
 
     @Override
-    void calcularDimensoesLente() {
+    public void calcularDimensoesLente() {
         if (grauEsferico >= 0) {
             System.out.println("Erro: Miopia requer grau esférico negativo.");
             return;
