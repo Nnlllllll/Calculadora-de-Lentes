@@ -1,4 +1,4 @@
-abstract class CondicaoOcular {
+public abstract class CondicaoOcular {
     protected double grauEsferico;
     protected double indiceRefracao;
     protected String tipoLente;
@@ -26,5 +26,5 @@ abstract class CondicaoOcular {
         }
     }
 
-    abstract void calcularDimensoesLente();
+    public abstract void calcularDimensoesLente();
 }
