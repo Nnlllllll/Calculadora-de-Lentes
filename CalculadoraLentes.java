@@ -11,7 +11,7 @@ public class CalculadoraLentes {
         System.out.println("\nSelecione a condição ocular:");
         System.out.println("1 - Miopia");
         System.out.println("2 - Astigmatismo");
-        System.out.print("Digite o número da opção: ");
+        System.out.print("\nDigite o número da opção: ");
         int opcaoCondicao = scanner.nextInt();
 
         // Coleta dos graus
@@ -20,7 +20,7 @@ public class CalculadoraLentes {
         double grauCilindrico = 0;
         int eixo = 0;
         if (opcaoCondicao == 1) {
-            System.out.print("Digite o grau da miopia (exemplo: -2.5): ");
+            System.out.print("\nDigite o grau da miopia (exemplo: -2.5): ");
             grauEsferico = scanner.nextDouble();
             if (grauEsferico > 0 || grauEsferico < -20) {
                 System.out.println("Erro: Grau de miopia deve estar entre -20.0 e 0.0 D.");
@@ -35,12 +35,12 @@ public class CalculadoraLentes {
             System.out.print("Digite o eixo do cilindro (0 a 180 graus): ");
             eixo = scanner.nextInt();
             if (grauEsferico < -20 || grauEsferico > 20 || grauCilindrico > 0 || grauCilindrico < -6 || eixo < 0 || eixo > 180) {
-                System.out.println("Erro: Graus devem estar entre -20.0 e +20.0 D (esférico), -6.0 e 0.0 D (cilíndrico), e eixo entre 0 e 180 graus.");
+                System.out.println(\n"Erro: Graus devem estar entre -20.0 e +20.0 D (esférico), -6.0 e 0.0 D (cilíndrico), e eixo entre 0 e 180 graus.");
                 scanner.close();
                 return;
             }
         } else {
-            System.out.println("Opção inválida! Programa encerrado.");
+            System.out.println("\nOpção inválida! Programa encerrado.");
             scanner.close();
             return;
         }
@@ -50,7 +50,7 @@ public class CalculadoraLentes {
         System.out.println("1 - Resina (índice de refração: 1.50)");
         System.out.println("2 - Policarbonato (índice de refração: 1.59)");
         System.out.println("3 - Vidro (índice de refração: 1.52)");
-        System.out.print("Digite o número da opção: ");
+        System.out.print("\nDigite o número da opção: ");
         int opcaoMaterial = scanner.nextInt();
         String material;
         switch (opcaoMaterial) {
@@ -65,7 +65,7 @@ public class CalculadoraLentes {
                 break;
             default:
                 material = "Resina";
-                System.out.println("Opção inválida, usando Resina como padrão.");
+                System.out.println("\nOpção inválida, usando Resina como padrão.");
         }
 
         // Escolha do tipo de lente
@@ -73,7 +73,7 @@ public class CalculadoraLentes {
         System.out.println("1 - Plano-côncava (comum para miopia)");
         System.out.println("2 - Biconcava (alternativa para miopia)");
         System.out.println("3 - Tórica (específica para astigmatismo)");
-        System.out.print("Digite o número da opção: ");
+        System.out.print("\nDigite o número da opção: ");
         int opcaoLente = scanner.nextInt();
         String tipoLente;
         switch (opcaoLente) {
@@ -88,7 +88,7 @@ public class CalculadoraLentes {
                 break;
             default:
                 tipoLente = opcaoCondicao == 2 ? "Tórica" : "Plano-côncava";
-                System.out.println("Opção inválida, usando " + tipoLente + " como padrão.");
+                System.out.println("\nOpção inválida, usando " + tipoLente + " como padrão.");
         }
 
         // Instanciação da condição ocular
